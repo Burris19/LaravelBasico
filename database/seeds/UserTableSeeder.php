@@ -28,6 +28,7 @@ class UserTableSeeder extends  Seeder{
                 'bio'       => $faker->paragraph(rand(2,5)),
                 'website'   => 'http://www.' . $faker->domainName,
                 'twitter'   => 'http://www.twitter.com/' . $faker->userName,
+                'birthdate' => $faker->dateTimeBetween($startDate  = '-45 years', '-15years')->format('Y-m-d')
             ));
 
             \DB::table('tags')->insert(array(
